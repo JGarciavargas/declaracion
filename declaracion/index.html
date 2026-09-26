@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#211a27">
+  <title>Nuestro mundo❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Navegación y marca del proyecto: cambia aquí el nombre visible del sitio. -->
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <span class="brand-mark" aria-hidden="true">♥</span>
+        <span><span class="brand-name">Cartas desde mi corazon</span><span class="brand-caption">Un rincón para ser nosotros sin importar nada</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <button class="tab-button" type="button" data-view-target="home" aria-current="page">Inicio</button>
+        <button class="tab-button" type="button" data-view-target="collection">cartas y enviar mesajitos💜</button>
+      </nav>
+    </header>
+
+    <main class="app-main">
+      <!-- Inicio: cambia el texto de bienvenida y la ruta de img/amor.png aquí. -->
+      <section class="app-view" id="home-view" aria-labelledby="home-title">
+        <div class="welcome">
+          <div class="welcome-copy">
+            <p class="kicker">Un recordatorio de lo mucho que podemos lograr con amor</p>
+            <h1 id="home-title">Todo lo lo que no puedo decirte de frente</h1>
+            <p>siempre que dudes de lo que siento por ti, entra y lee las cartas talvez no pueda subirlas muy seguido pero no intentare mi amor, tambien cree una apartado para que puedas enviarme cartas o mensajes de amor sorpresa a mi telefono.</p>
+          </div>
+          <figure class="welcome-art">
+            <img src="img/amor.png" alt="Collage romántico de recuerdos y fotografías">
+            <figcaption>Con todo mi cariño</figcaption>
+          </figure>
+        </div>
+        <div class="section-rule"><h2>Un primer mensaje</h2></div>
+        <div class="card-grid" id="home-cards"></div>
+        <div class="home-collection-link">
+          <button class="tab-button" type="button" data-go-collection>Ver todas las cartas →</button>
+        </div>
+      </section>
+
+      <!-- Colección: las tarjetas publicadas se definen en app.js; el compositor solo envía mensajes. -->
+      <section class="app-view" id="collection-view" aria-labelledby="collection-title" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="kicker">Un lugar para volver</p>
+            <h1 id="collection-title">Mis cartas</h1>
+            <p>Las cartas de esta colección se editan en el código. Usa el envío rápido para mandarme una nota privada.</p>
+          </div>
+          <button class="primary-action" type="button" data-new-letter><span aria-hidden="true">✉</span> Escribir y enviar</button>
+        </div>
+        <div class="card-grid" id="collection-cards"></div>
+      </section>
+    </main>
+    <footer class="footer-note">Hecho con cariño, palabra por palabra.</footer>
+  </div>
+
+  <!-- Animación compartida al abrir una carta: cambia la ilustración en img/. -->
+  <section class="overlay envelope-scene" id="envelope-scene" role="status" aria-live="polite" hidden>
+    <img src="img/abierto-50%25.png" alt="La carta se abre">
+    <p>Un momento para ti...</p>
+  </section>
+
+  <!-- Propuesta inicial: edita aquí la pregunta y las respuestas. -->
+  <section class="overlay" id="proposal-overlay" role="dialog" aria-modal="true" aria-labelledby="question-title" hidden>
+    <div class="frame">
+      <p class="eyebrow">Una pregunta importante</p>
+      <div class="heart" aria-hidden="true">♥</div>
+      <h1 class="proposal-title" id="question-title">¿Quieres ser mi novia?</h1>
+      <p class="subtitle">Desde que llegaste, mis días tienen un poquito más de magia. ¿Te gustaría empezar esta aventura conmigo?</p>
+      <div class="choices">
+        <button class="yes-button" type="button" id="yes-button">Sí, quiero ♥</button>
+        <button class="no-button" type="button" id="no-button">No</button>
+      </div>
+      <p class="tiny-note">Sin presión. Lo más importante es que seas sincera.</p>
+      <button class="close-button" type="button" data-close>Volver a las cartas</button>
+    </div>
+  </section>
+
+  <section class="overlay" id="yes-overlay" role="dialog" aria-modal="true" aria-labelledby="answer-title" hidden>
+    <article class="letter">
+      <p class="pixel-label">NUEVA AVENTURA DESBLOQUEADA</p>
+      <h2 id="answer-title">¡Sabía que dirías que sí!</h2>
+      <div class="letter-copy" id="letter-copy">Prepárate para nuestro próximo plan.</div>
+      <p class="signature">Con cariño,<br><span id="signature-name">[Tu nombre]</span></p>
+      <button class="close-button" type="button" data-close>Volver a las cartas</button>
+    </article>
+  </section>
+
+  <section class="overlay" id="no-overlay" role="dialog" aria-modal="true" aria-labelledby="sad-title" hidden>
+    <div class="sad-content">
+      <div class="sad-face" aria-hidden="true">☹️</div>
+      <p class="pixel-label">RESPUESTA RECIBIDA</p>
+      <h2 id="sad-title">Gracias por decirme la verdad</h2>
+      <p>Me da un poquito de pena, pero respeto lo que sientes. Gracias por ser sincera conmigo.</p>
+      <button class="close-button" type="button" data-close>Entiendo</button>
+    </div>
+  </section>
+
+  <!-- Compositor rápido: el mensaje se envía al webhook y no se guarda como tarjeta pública. -->
+  <section class="overlay" id="new-letter-overlay" role="dialog" aria-modal="true" aria-labelledby="new-letter-title" hidden>
+    <div class="modal-panel">
+      <p class="kicker">Un mensaje privado</p>
+      <h2 id="new-letter-title">Escribe tu carta</h2>
+      <p class="modal-intro">Al enviarla, recibiré el mensaje en Discord. No se añadirá a las cartas de la página.</p>
+      <form class="letter-form" id="letter-form">
+        <label>Asunto<input name="title" maxlength="80" required placeholder="Por ejemplo: Una sorpresa para ti"></label>
+        <label>Tu mensaje<textarea name="message" maxlength="1600" rows="7" required placeholder="Escribe aquí lo que quieres contarme..."></textarea></label>
+        <div class="message-meta"><span>Solo yo lo recibiré en Discord.</span><span id="message-count">0 / 1600</span></div>
+        <label>Tu firma <span class="optional-label">(opcional)</span><input name="signature" maxlength="80" placeholder="Tu nombre"></label>
+        <p id="form-error" class="form-status" role="status" aria-live="polite" hidden></p>
+        <div class="form-actions">
+          <button class="secondary-action" type="button" data-close>Cancelar</button>
+          <button class="primary-action" type="submit" id="send-letter-button"><span aria-hidden="true">➤</span> Enviar carta</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Plantilla visual de la segunda carta desbloqueable. -->
+  <section class="overlay" id="secret-letter-overlay" role="dialog" aria-modal="true" aria-labelledby="secret-letter-title" hidden>
+    <article class="secret-letter">
+      <p class="pixel-label">UN SECRETO GUARDADO PARA TI</p>
+      <h2 id="secret-letter-title"></h2>
+      <div class="secret-letter-copy" id="secret-letter-copy"></div>
+      <p class="secret-signature">Con cariño,<br><span id="secret-letter-signature"></span></p>
+      <button class="close-button" type="button" data-close>Cerrar carta</button>
+    </article>
+  </section>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
