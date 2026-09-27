@@ -21,7 +21,7 @@ const responseWebhookUrl = "https://discordapp.com/api/webhooks/1553516456996507
     };
     const proposalCard = {
       id: "proposal",
-      title: "¿Quieres ser mi novia?",
+      title: "¿Quieres ser mi novia de adeberitas?",
       description: "Una pregunta importante, guardada en su propio sobre.",
       category: "La primera carta",
       isProposal: true

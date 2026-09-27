@@ -30,15 +30,15 @@
         <div class="welcome">
           <div class="welcome-copy">
             <p class="kicker">Un recordatorio de lo mucho que podemos lograr con amor</p>
-            <h1 id="home-title">Todo lo lo que no puedo decirte de frente</h1>
+            <h1 id="home-title">Todo lo que no puedo decirte de frente</h1>
             <p>siempre que dudes de lo que siento por ti, entra y lee las cartas talvez no pueda subirlas muy seguido pero no intentare mi amor, tambien cree una apartado para que puedas enviarme cartas o mensajes de amor sorpresa a mi telefono.</p>
           </div>
           <figure class="welcome-art">
             <img src="img/amor.png" alt="Collage romántico de recuerdos y fotografías">
-            <figcaption>Con todo mi cariño</figcaption>
+            <figcaption>Con todo mi amor</figcaption>
           </figure>
         </div>
-        <div class="section-rule"><h2>Un primer mensaje</h2></div>
+        <div class="section-rule"><h2>cartitas pro</h2></div>
         <div class="card-grid" id="home-cards"></div>
         <div class="home-collection-link">
           <button class="tab-button" type="button" data-go-collection>Ver todas las cartas →</button>
@@ -49,9 +49,9 @@
       <section class="app-view" id="collection-view" aria-labelledby="collection-title" hidden>
         <div class="section-heading">
           <div>
-            <p class="kicker">Un lugar para volver</p>
+            <p class="kicker">vuelve las veces que necesites mi amor</p>
             <h1 id="collection-title">Mis cartas</h1>
-            <p>Las cartas de esta colección se editan en el código. Usa el envío rápido para mandarme una nota privada.</p>
+            <p>La pagina se actualiza con nuevas sorpresitas para ti.</p>
           </div>
           <button class="primary-action" type="button" data-new-letter><span aria-hidden="true">✉</span> Escribir y enviar</button>
         </div>
@@ -64,22 +64,24 @@
   <!-- Animación compartida al abrir una carta: cambia la ilustración en img/. -->
   <section class="overlay envelope-scene" id="envelope-scene" role="status" aria-live="polite" hidden>
     <img src="img/abierto-50%25.png" alt="La carta se abre">
-    <p>Un momento para ti...</p>
+    <p>Cargando mi amor...</p>
   </section>
 
   <!-- Propuesta inicial: edita aquí la pregunta y las respuestas. -->
   <section class="overlay" id="proposal-overlay" role="dialog" aria-modal="true" aria-labelledby="question-title" hidden>
     <div class="frame">
-      <p class="eyebrow">Una pregunta importante</p>
+      <p class="eyebrow">La pregunta que cambiara nuestra forma de vivir</p>
       <div class="heart" aria-hidden="true">♥</div>
-      <h1 class="proposal-title" id="question-title">¿Quieres ser mi novia?</h1>
-      <p class="subtitle">Desde que llegaste, mis días tienen un poquito más de magia. ¿Te gustaría empezar esta aventura conmigo?</p>
+      <h1 class="proposal-title" id="question-title">¿Quieres ser mi noviecita?</h1>
+      <p class="subtitle">Oa amor, se que talvez sea muy rápido para decir que te amo pero, ¿y si realmente el amor no tiene un inicio o un fin? Siento que quiero alejarme de la percepción que nos enmendaron desde que somos pequeños para decirte algo.
+Si, te amo, el ¿Por qué? Aun tengo que averiguarlo pero, me queda claro que tu y yo tenemos una innegable conexión y no permitire que solo por que el mundo diga que es muy rápido no pueda amar con todo mi corazón, aun no se si será el principio de mi amor por ti, pero ten por seguro que día con día mi amor por ti no podrá hacer nada mas que crecer así que 
+ ¿que dices? ¿Te gustaría empezar una aventura nueva conmigo?</p>
       <div class="choices">
         <button class="yes-button" type="button" id="yes-button">Sí, quiero ♥</button>
-        <button class="no-button" type="button" id="no-button">No</button>
+        <button class="no-button" type="button" id="no-button">No perro</button>
       </div>
-      <p class="tiny-note">Sin presión. Lo más importante es que seas sincera.</p>
-      <button class="close-button" type="button" data-close>Volver a las cartas</button>
+      <p class="tiny-note">sientete libre de tomar la desicion que tu corazon te diga</p>
+      <button class="close-button" type="button" data-close>Volver al menu de cartas</button>
     </div>
   </section>
 
@@ -87,19 +89,19 @@
     <article class="letter">
       <p class="pixel-label">NUEVA AVENTURA DESBLOQUEADA</p>
       <h2 id="answer-title">¡Sabía que dirías que sí!</h2>
-      <div class="letter-copy" id="letter-copy">Prepárate para nuestro próximo plan.</div>
-      <p class="signature">Con cariño,<br><span id="signature-name">[Tu nombre]</span></p>
-      <button class="close-button" type="button" data-close>Volver a las cartas</button>
+      <div class="letter-copy" id="letter-copy">No te vas a arrepentir mi amor hare que tus dias sean los mas felices en el mundo.</div>
+      <p class="signature">Con cariño,<br><span id="signature-name">ALEXITO TU AMOR</span></p>
+      <button class="close-button" type="button" data-close>Volver al menu de cartas</button>
     </article>
   </section>
 
   <section class="overlay" id="no-overlay" role="dialog" aria-modal="true" aria-labelledby="sad-title" hidden>
     <div class="sad-content">
       <div class="sad-face" aria-hidden="true">☹️</div>
-      <p class="pixel-label">RESPUESTA RECIBIDA</p>
-      <h2 id="sad-title">Gracias por decirme la verdad</h2>
-      <p>Me da un poquito de pena, pero respeto lo que sientes. Gracias por ser sincera conmigo.</p>
-      <button class="close-button" type="button" data-close>Entiendo</button>
+      <p class="pixel-label">RESPUESTA ENVIADA</p>
+      <h2 id="sad-title">Gracias por ser sincera conmigo</h2>
+      <p>Entiendo que el amor aveces puede ser complicado pero respeto tu decisión.</p>
+      <button class="close-button" type="button" data-close>callate alex</button>
     </div>
   </section>
 
@@ -108,16 +110,16 @@
     <div class="modal-panel">
       <p class="kicker">Un mensaje privado</p>
       <h2 id="new-letter-title">Escribe tu carta</h2>
-      <p class="modal-intro">Al enviarla, recibiré el mensaje en Discord. No se añadirá a las cartas de la página.</p>
+      <p class="modal-intro">Al enviarla, recibiré el mensaje en mi telefono. No se añadirá a las cartas de la página.</p>
       <form class="letter-form" id="letter-form">
         <label>Asunto<input name="title" maxlength="80" required placeholder="Por ejemplo: Una sorpresa para ti"></label>
         <label>Tu mensaje<textarea name="message" maxlength="1600" rows="7" required placeholder="Escribe aquí lo que quieres contarme..."></textarea></label>
-        <div class="message-meta"><span>Solo yo lo recibiré en Discord.</span><span id="message-count">0 / 1600</span></div>
-        <label>Tu firma <span class="optional-label">(opcional)</span><input name="signature" maxlength="80" placeholder="Tu nombre"></label>
+        <div class="message-meta"><span>escribe tu mesajito siempre con amor no con odio</span><span id="message-count">0 / 1600</span></div>
+        <label>Tu firma <span class="optional-label">(o nombre)</span><input name="signature" maxlength="80" placeholder="Tu nombre"></label>
         <p id="form-error" class="form-status" role="status" aria-live="polite" hidden></p>
         <div class="form-actions">
           <button class="secondary-action" type="button" data-close>Cancelar</button>
-          <button class="primary-action" type="submit" id="send-letter-button"><span aria-hidden="true">➤</span> Enviar carta</button>
+          <button class="primary-action" type="submit" id="send-letter-button"><span aria-hidden="true">➤</span> Enviar carta a alex</button>
         </div>
       </form>
     </div>
